@@ -17,6 +17,7 @@ class ItemAjaxController extends Controller
     {
         return view('manage-item-ajax');
     }
+    
     public function index()
     {
       $items = Item::latest()->paginate(5);

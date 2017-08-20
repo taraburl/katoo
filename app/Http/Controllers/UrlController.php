@@ -58,5 +58,10 @@ class UrlController extends Controller {
         return view('Formularios/empresas', compact('titulo', 'subtitulo'));
     }
 
+    public function objeto() {
+        $titulo = $this->titulo;
+        $subtitulo = $this->subtitulo;
+        return view('Formularios/objeto', compact('titulo', 'subtitulo'));
+    }
 }
  
