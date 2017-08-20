@@ -59,3 +59,4 @@ class UrlController extends Controller {
     }
 
 }
+ 
