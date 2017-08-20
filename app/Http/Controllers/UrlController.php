@@ -25,7 +25,7 @@ class UrlController extends Controller {
     public function BackofficeAdminkatoo() {
         $titulo = $this->titulo;
         $subtitulo = $this->subtitulo;
-        return view('MasterPage/TBackoffice', compact('titulo', 'subtitulo'));
+        return view('Formularios/inicio', compact('titulo', 'subtitulo'));
     }
 
     public function Autenticacion() {
