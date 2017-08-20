@@ -20,7 +20,7 @@
         <link rel="shortcut icon" href="Backoffice/img/favicon.ico">
         <!-- Font Awesome CDN-->
         <!-- you can replace it by local Font Awesome-->
-        <script src="Backoffice/99347ac47f.js"></script>
+        <link href="/Backoffice/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <!-- Font Icons CSS-->
         <link rel="stylesheet" href="Backoffice/icons.css">
         <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -111,7 +111,7 @@
                     <!-- Sidebar Navidation Menus-->
                     <span class="heading">Menu</span>
                     <!-- Sidebar Navidation Menus subtitulo-->
-                    <span class="heading">Main</span>
+                    <span class="heading">Inicio</span>
                     <ul class="list-unstyled">
                         @foreach ($titulo as $user)
                         <li><a href="#dashvariants{{ $user->id }}" aria-expanded="false" data-toggle="collapse"> <i class="{{ $user->font }}"></i> {{ $user->nombre }}</a>
@@ -137,7 +137,6 @@
                                 </div>
                                 <div class="col-sm-6 text-right">
                                     <p>Design by <a href="#" class="external">Quadrant</a></p>
-                                    <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
                                 </div>
                             </div>
                         </div>
