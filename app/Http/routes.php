@@ -34,4 +34,4 @@ Route::get('/usuarios', 'UrlController@usuarios');
 Route::get('/accesos', 'UrlController@accesos');
 Route::get('/modulos','UrlController@modulos');
 Route::get('/empresas','UrlController@empresas');
-Route::get('/rubendario','rubendario@empresas');
+ 

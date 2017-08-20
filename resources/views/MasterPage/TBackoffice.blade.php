@@ -12,7 +12,7 @@
         <!-- Google fonts - Roboto -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
         <!-- theme stylesheet-->
-        <link rel="stylesheet" href="Backoffice/css/style.pink.css" id="theme-stylesheet">
+        <link rel="stylesheet" href="Backoffice/css/style.default.css" id="theme-stylesheet">
         <!-- Custom stylesheet - for your changes-->
         <link rel="stylesheet" href="Backoffice/css/custom.css">
         <link rel="stylesheet" href="Backoffice/css/pink.css">
