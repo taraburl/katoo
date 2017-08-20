@@ -29,24 +29,33 @@ class UrlController extends Controller {
     }
 
     public function Autenticacion() {
-      
-        return view('MasterPage/TLoginBackoffice');
+        $titulo = $this->titulo;
+        $subtitulo = $this->subtitulo;
+        return view('MasterPage/TLoginBackoffice', compact('titulo', 'subtitulo'));
     }
 
     public function usuarios() {
-        return view('Formularios/usuarios');
+        $titulo = $this->titulo;
+        $subtitulo = $this->subtitulo;
+        return view('Formularios/usuarios', compact('titulo', 'subtitulo'));
     }
 
     public function accesos() {
-        return view('Formularios/accesos');
+        $titulo = $this->titulo;
+        $subtitulo = $this->subtitulo;
+        return view('Formularios/accesos', compact('titulo', 'subtitulo'));
     }
 
     public function modulos() {
-        return view('Formularios/modulos');
+        $titulo = $this->titulo;
+        $subtitulo = $this->subtitulo;
+        return view('Formularios/modulos', compact('titulo', 'subtitulo'));
     }
 
     public function empresas() {
-        return view('Formularios/empresas');
+        $titulo = $this->titulo;
+        $subtitulo = $this->subtitulo;
+        return view('Formularios/empresas', compact('titulo', 'subtitulo'));
     }
 
 }
