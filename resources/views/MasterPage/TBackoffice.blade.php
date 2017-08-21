@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all,follow">
+            <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Bootstrap CSS-->
         <link rel="stylesheet" href="Backoffice/css/bootstrap.min.css">
         <!-- Google fonts - Roboto -->
@@ -145,12 +146,16 @@
             </div>
         </div>
         <!-- Javascript files-->
-        <script src="js/jquery.min.js"></script>
+          <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>  
         <script src="Backoffice/js/tether.min.js"></script>
         <script src="Backoffice/js/bootstrap.min.js"></script>
         <script src="Backoffice/js/jquery.cookie.js"></script>
         <script src="Backoffice/js/jquery.validate.min.js"></script>
         <script src="Backoffice/js/front.js"></script>
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.3.1/jquery.twbsPagination.min.js"></script> 
+        <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.css">
+ @yield('Abm')
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
         <!---->
         <script>

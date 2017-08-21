@@ -26,6 +26,7 @@ Route::resource('TipoEmpleado', 'TipoEmpleadoController');
 Route::get('manage-item-ajax', 'ItemAjaxController@manageItemAjax');
 Route::resource('item-ajax', 'ItemAjaxController');
 Route::resource('Url', 'UrlController');
+Route::resource('Modulo', 'ModuloController');
 //--------------Fin----
 Route::get('/', 'UrlController@index');
 Route::get('BackofficeAdminkatoo', 'UrlController@BackofficeAdminkatoo');

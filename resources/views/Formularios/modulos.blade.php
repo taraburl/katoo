@@ -23,60 +23,43 @@
 
                 </div>
                 <div class="form-group col-lg-2 col-md-4 col-sm-6 col-xs-6">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">NUEVO MODULO</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-item"   data-target="#create-item" href="#create-item">NUEVO MODULO</button>
                 </div>
             </div>
             <div class="card-body">
                 <table class="table table-striped table-sm">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter      </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
+                <thead>
+			    <tr>
+				<th>Codigo</th>
+				<th>Nombre</th>
+				<th width="200px">Action</th>
+			    </tr>
+			</thead >
+			<tbody id="datos">
+			</tbody>
+
+
+
                 </table>
+            
+            <ul id="pagination" class="pagination-sm"></ul>
+		<br>
+		   <div id="pagination-short"></div>
             </div>
         </div>
     </div>
 </section>
+
+        <script type="text/javascript">
+    	   var url = "<?php echo route('Modulo.index')?>";
+        </script>
+      
+
+
+
+
 @stop
+
+ @section('Abm')
+              <script src="Backoffice/jsformulario/modulo.js"></script> 
+ @endsection
