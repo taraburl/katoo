@@ -38,5 +38,8 @@ Route::get('/empresas','UrlController@empresas');
 
 Route::get('/objeto','UrlController@objeto');
 
+
+Route::post('allposts', 'ModuloController@allPosts' )->name('allposts');
+
   
 

@@ -15,8 +15,9 @@
         <!-- theme stylesheet-->
         <link rel="stylesheet" href="Backoffice/css/style.default.css" id="theme-stylesheet">
         <!-- Custom stylesheet - for your changes-->
-        <link rel="stylesheet" href="Backoffice/css/custom.css">
-        <link rel="stylesheet" href="Backoffice/css/pink.css">
+        <link rel="stylesheet" href="Backoffice/css/paginacion.css" >
+        
+       
         <!-- Favicon-->
         <link rel="shortcut icon" href="Backoffice/img/favicon.ico">
         <!-- Font Awesome CDN-->
@@ -24,9 +25,14 @@
         <link href="/Backoffice/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <!-- Font Icons CSS-->
         <link rel="stylesheet" href="Backoffice/icons.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+                <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css"/>
+
         <!-- Tweaks for older IEs--><!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]
+         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
+            -->
     </head>
     <body>
         <div class="page home-page">
@@ -152,9 +158,14 @@
         <script src="Backoffice/js/jquery.cookie.js"></script>
         <script src="Backoffice/js/jquery.validate.min.js"></script>
         <script src="Backoffice/js/front.js"></script>
+       <script src="Backoffice/js/paginacion.js"></script>
+
                 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.3.1/jquery.twbsPagination.min.js"></script> 
         <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.css">
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>  
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js"></script>  
+
  @yield('Abm')
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
         <!---->

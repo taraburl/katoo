@@ -20,7 +20,7 @@ class ItemAjaxController extends Controller
     
     public function index()
     {
-      $items = Item::latest()->paginate(5);
+      $items = Item::orderBy('created_at', 'desc')->simplePaginate(5);
         return response()->json($items);
     }
 

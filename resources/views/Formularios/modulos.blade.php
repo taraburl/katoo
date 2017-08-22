@@ -27,12 +27,12 @@
                 </div>
             </div>
             <div class="card-body">
-                <table class="table table-striped table-sm">
+              <table class="display responsive nowrap" cellspacing="0" width="100%" id="posts">
                 <thead>
 			    <tr>
 				<th>Codigo</th>
 				<th>Nombre</th>
-				<th width="200px">Action</th>
+				<th disabled>Action</th>
 			    </tr>
 			</thead >
 			<tbody id="datos">
@@ -42,24 +42,32 @@
 
                 </table>
             
-            <ul id="pagination" class="pagination-sm"></ul>
-		<br>
-		   <div id="pagination-short"></div>
+
+		 
             </div>
         </div>
+
+ 
+ 
+    <ul id="pagination" class="pagination"></ul>
+ 
     </div>
 </section>
 
-        <script type="text/javascript">
-    	   var url = "<?php echo route('Modulo.index')?>";
+   
+     <script type="text/javascript">
+           var url = "<?php echo route('Modulo.index')?>";
+ 
         </script>
       
-
 
 
 
 @stop
 
  @section('Abm')
+ 
               <script src="Backoffice/jsformulario/modulo.js"></script> 
+                  
+
  @endsection

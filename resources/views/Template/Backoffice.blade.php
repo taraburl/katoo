@@ -44,7 +44,7 @@
     <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css"/>
 
 </head>
 
@@ -329,7 +329,8 @@
     ================================================ -->
     
     <!-- jQuery Library -->
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>  
+  
     <!--materialize js-->
     <script type="text/javascript" src="js/materialize.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -342,6 +343,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.css">
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="js/plugins.js"></script>
+
    @yield('script')
 
    

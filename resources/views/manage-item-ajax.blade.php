@@ -34,7 +34,7 @@
           
 		<ul id="pagination" class="pagination-sm"></ul>
 		<br>
-		   <div id="pagination-short"></div>
+		   <div id="pagination"  class="pagination-sm">></div>
 
 	    <!-- Create Item Modal -->  
  
