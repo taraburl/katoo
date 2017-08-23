@@ -3,7 +3,7 @@
 <!-- Page Header-->
 <header class="page-header">
     <div class="container-fluid">
-        <h2 class="no-margin-bottom"> Modulo</h2>
+        <h2 class="no-margin-bottom">Formulario  Modulo</h2>
     </div>
 </header>
 <section class="tables">
@@ -11,17 +11,7 @@
         @include('Modal.Modulo')
         <div class="card">
             <div class="card-header d-flex">
-                <div class="form-group col-lg-3 col-md-4 col-sm-6 col-xs-6">
-                    <div class="input-group left">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                        </span>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-4 col-sm-1 col-xs-1">
-
-                </div>
+             
                 <div class="form-group col-lg-2 col-md-4 col-sm-6 col-xs-6">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-item"   data-target="#create-item" href="#create-item">NUEVO MODULO</button>
                 </div>

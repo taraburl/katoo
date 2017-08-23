@@ -27,6 +27,7 @@ Route::get('manage-item-ajax', 'ItemAjaxController@manageItemAjax');
 Route::resource('item-ajax', 'ItemAjaxController');
 Route::resource('Url', 'UrlController');
 Route::resource('Modulo', 'ModuloController');
+Route::resource('Objeto', 'ObjetoController');
 //--------------Fin----
 Route::get('/', 'UrlController@index');
 Route::get('BackofficeAdminkatoo', 'UrlController@BackofficeAdminkatoo');
@@ -39,7 +40,8 @@ Route::get('/empresas','UrlController@empresas');
 Route::get('/objeto','UrlController@objeto');
 
 
-Route::post('allposts', 'ModuloController@allPosts' )->name('allposts');
-
+Route::post('allmodulo', 'ModuloController@allModulos' )->name('allmodulo');
+Route::post('allobjeto', 'ObjetoController@allObjeto' )->name('allobjeto');
+Route::get('consulta','ObjetoController@probarconsulta');
   
 

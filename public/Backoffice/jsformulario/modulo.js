@@ -40,7 +40,7 @@ $(document).ready(function () {
             "processing": true,
             "serverSide": true,
             "ajax":{
-                     "url": "/allposts",
+                     "url": "/allmodulo",
                      "dataType": "json",
                      "type": "POST",
                      "data":{ _token: token}

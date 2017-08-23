@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Modulo;
-use App\Http\Requests;
+use App\Objeto;
 use DB;
+use App\Http\Requests;
 
-class ModuloController extends Controller
+class ObjetoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +16,8 @@ class ModuloController extends Controller
      */
     public function index()
     {
-           $Modulo = Modulo::latest()->paginate(4);
-        return response()->json($Modulo);  
-
-
-         }
+        //
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -40,8 +37,7 @@ class ModuloController extends Controller
      */
     public function store(Request $request)
     {
-         $create = Modulo::create($request->all());
-        return response()->json($create);
+        //
     }
 
     /**
@@ -52,8 +48,7 @@ class ModuloController extends Controller
      */
     public function show($id)
     {
-         $show = Modulo::find($id);
-        return response()->json($show);
+        //
     }
 
     /**
@@ -64,7 +59,7 @@ class ModuloController extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
@@ -76,8 +71,7 @@ class ModuloController extends Controller
      */
     public function update(Request $request, $id)
     {
-              $edit = Modulo::find($id)->update($request->all());
-        return response()->json($edit);
+        //
     }
 
     /**
@@ -88,21 +82,32 @@ class ModuloController extends Controller
      */
     public function destroy($id)
     {
-          $edit = Modulo::find($id)->update(['eliminado' => 1]);
-
-            // ->update(['votes' => 1]);
-   return response()->json($edit);
+        //
     }
+public function probarconsulta()
+{
+        $posts =  DB::table('objeto')
+                ->select('objeto.id', 'objeto.nombre', 'objeto.url', 'objeto.tipoobjeto','modulo.nombre as modulo','modulo.id as idmodulo')
+                 ->join('modulo', 'modulo.id', '=', 'objeto.idmodulo')
+                ->where('objeto.eliminar', '=', 0)->get();
+         return   $posts ;
+}
 
-    public function allModulos(Request $request)
+       public function allObjeto(Request $request)
     {
         $columns = array( 
                             0 =>'id', 
                             1 =>'nombre',
-                            2=>'action',
+                            2=>'url',
+                            3=>'tipoobjeto',
+                            4=>'modulo',
+                            5=>'action'
+                        
+
+                            
                         );
-        $totalData = DB::table('modulo')
-            ->where('eliminado', '=', 0)
+        $totalData = DB::table('objeto')
+            ->where('eliminar', '=', 0)
                          ->count();
         $totalFiltered = $totalData; 
         $limit = $request->input('length');
@@ -111,8 +116,10 @@ class ModuloController extends Controller
         $dir = $request->input('order.0.dir');
         if(empty($request->input('search.value')))
         {            
-            $posts = DB::table('modulo')
-            ->where('eliminado', '=', 0)
+          $posts =  DB::table('objeto')
+                         ->select('objeto.id', 'objeto.nombre', 'objeto.url', 'objeto.tipoobjeto','modulo.nombre as modulo','modulo.id as idmodulo')
+                         ->join('modulo', 'modulo.id', '=', 'objeto.idmodulo')
+                         ->where('objeto.eliminar', '=', 0)
                          ->offset($start)
                          ->limit($limit)
                          ->orderBy($order,$dir)
@@ -120,18 +127,25 @@ class ModuloController extends Controller
         }
         else {
             $search = $request->input('search.value'); 
-            $posts =  DB::table('modulo')
-            ->where('eliminado', '=', 0)
-                         ->where('id','LIKE',"%{$search}%")
-                            ->orWhere('nombre', 'LIKE',"%{$search}%")
-                            ->offset($start)
-                            ->limit($limit)
-                            ->orderBy($order,$dir)
-                            ->get();
-            $totalFiltered = DB::table('modulo')
-            ->where('eliminado', '=', 0)
-                         ->where('id','LIKE',"%{$search}%")
-                             ->orWhere('nombre', 'LIKE',"%{$search}%")
+           $posts =  DB::table('objeto')
+                ->select('objeto.id', 'objeto.nombre', 'objeto.url', 'objeto.tipoobjeto','modulo.nombre as modulo','modulo.id as idmodulo')
+                ->join('modulo', 'modulo.id', '=', 'objeto.idmodulo')
+                ->where('objeto.eliminar', '=', 0)
+                          ->where('objeto.id','LIKE',"%{$search}%")
+                          ->orWhere('objeto.url','LIKE',"%{$search}%")
+                          ->orWhere('objeto.nombre', 'LIKE',"%{$search}%")
+                          ->offset($start)
+                          ->limit($limit)
+                          ->orderBy($order,$dir)
+                          ->get();
+            $totalFiltered = DB::table('objeto')
+                        ->select('objeto.id', 'objeto.nombre', 'objeto.url', 'objeto.tipoobjeto','modulo.nombre as modulo','modulo.id as idmodulo')
+                        ->join('modulo', 'modulo.id', '=', 'objeto.idmodulo')
+                        ->where('objeto.eliminar', '=', 0)
+                        ->where('objeto.id','LIKE',"%{$search}%")
+                        ->orWhere('objeto.url','LIKE',"%{$search}%")
+                        ->orWhere('objeto.nombre', 'LIKE',"%{$search}%")
+                         
                              ->count();
         }
         $data = array();
@@ -141,9 +155,12 @@ class ModuloController extends Controller
             {
           //      $show =  route('Modulo.show',$post->id);
            //      $edit =  route('Modulo.edit',$post->id);
-               $nestedData["DT_RowId"]=$post->id;
+                $nestedData["DT_RowId"]=$post->id;
                 $nestedData['id'] = $post->id;
                 $nestedData['nombre'] = $post->nombre;
+                $nestedData['url'] = $post->url;
+                $nestedData['tipoobjeto'] = $post->tipoobjeto;
+                $nestedData['modulo'] = $post->modulo;
                 $nestedData['action'] = "&emsp; 
                                           <button data-toggle='modal' data-target='#edit-item'  onclick='mostrardata({$post->id})' class='btn btn-primary edit-item'>Edit</button> 
                                           &emsp;<button class='btn btn-danger remove-item'>Delete</button>";
