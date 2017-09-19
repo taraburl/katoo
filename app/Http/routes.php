@@ -28,6 +28,7 @@ Route::resource('item-ajax', 'ItemAjaxController');
 Route::resource('Url', 'UrlController');
 Route::resource('Modulo', 'ModuloController');
 Route::resource('Objeto', 'ObjetoController');
+Route::resource('Perfilobjeto', 'PerfilobjetoController');
 //--------------Fin----
 Route::get('/', 'UrlController@index');
 Route::get('BackofficeAdminkatoo', 'UrlController@BackofficeAdminkatoo');
@@ -42,6 +43,11 @@ Route::get('/objeto','UrlController@objeto');
 
 Route::post('allmodulo', 'ModuloController@allModulos' )->name('allmodulo');
 Route::post('allobjeto', 'ObjetoController@allObjeto' )->name('allobjeto');
-Route::get('consulta','ObjetoController@probarconsulta');
+Route::get('selectmodulo','ObjetoController@selectmodulo');
   
 
+
+
+Route::get('/perfilobjeto','UrlController@perfilobjeto');
+ 
+Route::get('/consultapruba/{id}','PerfilobjetoController@consultapruba')->name('consultaacceso');

@@ -66,15 +66,35 @@
  $('select#Tipo').on('change',function(){
     var valor = $(this).val();
     if (valor=='Titulo') {
- // 
-   
     $("#fontoculto").show();
     }else{
   $("#fontoculto").hide();
     }
-
 });
-
+ $('select#Tipo').on('change',function(){
+    var valor = $(this).val();
+    if (valor=='Formulario' || valor=='Reporte' ) {
+    $("#divtitulo").show();
+    }else{
+  $("#divtitulo").hide();
+    }
+});
+$('select#Tipoupdate').on('change',function(){
+    var valor = $(this).val();
+    if (valor=='Titulo') {
+    $("#fontocultoupdate").show();
+    }else{
+  $("#fontocultoupdate").hide();
+    }
+});
+ $('select#Tipoupdate').on('change',function(){
+    var valor = $(this).val();
+    if (valor=='Formulario' || valor=='Reporte' ) {
+    $("#divtituloupdate").show();
+    }else{
+  $("#divtituloupdate").hide();
+    }
+});
 </script>
               <script src="Backoffice/jsformulario/objeto.js"></script> 
                   

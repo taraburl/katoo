@@ -95,7 +95,7 @@ $.get(route,function(res){
 }
 /* Actulizar */
 $(".crud-submit-edit").click(function(e){
-debugger;
+
     e.preventDefault();
     var form_action = $("#edit-item").find("form").attr("action");
     var nombre = $("#edit-item").find("input[name='nombre']").val();

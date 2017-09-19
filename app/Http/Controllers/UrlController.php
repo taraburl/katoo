@@ -63,5 +63,14 @@ class UrlController extends Controller {
         $subtitulo = $this->subtitulo;
         return view('Formularios/objeto', compact('titulo', 'subtitulo'));
     }
-}
+    public function perfilobjeto() {
+        $titulo = $this->titulo;
+        $subtitulo = $this->subtitulo;
+        $perfil = DB::table('perfil')->select('id', 'nombre' )->where('eliminado', '=', 0)->get();
+        return view('Formularios/perfilobjeto', compact('titulo', 'subtitulo','perfil'));
+    }
  
+
+
+}
+ //

@@ -35,9 +35,48 @@ class ObjetoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // ['id', 'nombre', 'url', 'tipoobjeto', 'visibleconelmenu', 'idmodulo', 'eliminar', 'habilitado', 'padre', 'font'];
+    //nombre:nombre, Url: Url,modulo:modulo,Tipo:Tipo,habilitado:habilitado,Visible:Visible,font:font
     public function store(Request $request)
     {
-        //
+        $now = new \DateTime();
+  
+        if ($request->Tipo=='Titulo')
+        {
+             //nombre,url,tipo,visible,modulo,habilitado,padre,font
+            DB::table('objeto')->insert(
+                [   'nombre' => $request->nombre, 
+                    'url' => $request->Url,
+                    'tipoobjeto' => $request->Tipo,
+                    'idmodulo' => $request->modulo,
+                    'habilitado' => $request->habilitado,
+                    'padre' => 0,
+                    'font' => $request->font,
+                    'visibleconelmenu' => $request->Visible,
+                    'created_at' =>  $now->format('Y-m-d H:i:s'),
+                    'updated_at' => ''
+                ]);
+                        return response()->json('titulo');
+        }
+        else
+        {
+            //nombre,url,tipo,visible,modulo,habilitado,padre
+             DB::table('objeto')->insert(
+                [   'nombre' => $request->nombre, 
+                    'url' => $request->Url,
+                    'tipoobjeto' => $request->Tipo,
+                    'idmodulo' => $request->modulo,
+                    'habilitado' => $request->habilitado,
+                    'padre' => $request->titulo,
+                    'font' =>'',
+                    'visibleconelmenu' => $request->Visible,
+                    'created_at' =>  $now->format('Y-m-d H:i:s'),
+                    'updated_at' => ''
+                ]);
+                             return response()->json('subtitulo');
+        }
+       
+       
     }
 
     /**
@@ -48,7 +87,8 @@ class ObjetoController extends Controller
      */
     public function show($id)
     {
-        //
+               $show = Objeto::find($id);
+        return response()->json($show);
     }
 
     /**
@@ -71,7 +111,46 @@ class ObjetoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+             $now = new \DateTime();
+         if ($request->Tipo=='Titulo')
+        {
+             //nombre,url,tipo,visible,modulo,habilitado,padre,font
+            DB::table('objeto')
+            ->where('id', $id)
+            ->update(
+                [   'nombre' => $request->nombre, 
+                    'url' => $request->Url,
+                    'tipoobjeto' => $request->Tipo,
+                    'idmodulo' => $request->modulo,
+                    'habilitado' => $request->habilitado,
+                    'padre' => 0,
+                    'font' => $request->font,
+                    'visibleconelmenu' => $request->Visible,
+                    'created_at' =>  $now->format('Y-m-d H:i:s'),
+                    'updated_at' => ''
+                ]);
+                        return response()->json(1);
+        }
+        else
+        {
+            //nombre,url,tipo,visible,modulo,habilitado,padre
+              DB::table('objeto')
+              ->where('id', $id)
+              ->update(
+                [   'nombre' => $request->nombre, 
+                    'url' => $request->Url,
+                    'tipoobjeto' => $request->Tipo,
+                    'idmodulo' => $request->modulo,
+                    'habilitado' => $request->habilitado,
+                    'padre' => $request->titulo,
+                    'font' =>'',
+                    'visibleconelmenu' => $request->Visible,
+                    'created_at' =>  $now->format('Y-m-d H:i:s'),
+                    'updated_at' => ''
+                ]);
+                             return response()->json(2);
+        }
+       return response()->json(-1);
     }
 
     /**
@@ -84,12 +163,11 @@ class ObjetoController extends Controller
     {
         //
     }
-public function probarconsulta()
+public function selectmodulo()
 {
-        $posts =  DB::table('objeto')
-                ->select('objeto.id', 'objeto.nombre', 'objeto.url', 'objeto.tipoobjeto','modulo.nombre as modulo','modulo.id as idmodulo')
-                 ->join('modulo', 'modulo.id', '=', 'objeto.idmodulo')
-                ->where('objeto.eliminar', '=', 0)->get();
+        $posts =  DB::table('modulo')
+                ->select('modulo.id', 'modulo.nombre')
+                ->where('modulo.eliminado', '=', 0)->get();
          return   $posts ;
 }
 
